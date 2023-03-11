@@ -11,18 +11,38 @@
 
 .image{
     display: block;
-    width: 320px;
+    width: auto;
     height: 320px;
     margin: auto;
-    outline: 1px solid tomato;
-    transition-property: (width);
+    margin-top: 15px;
+    transition-property: (height);
     transition-duration: 250ms;
     transition-delay: 0;
+}
+fieldset{
+    border: none;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-block-start: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+    padding-block-end: 0;
+}
 
+form:hover svg{
+    fill: gray;
+}
+
+form:not(:hover) svg,
+form:not(:hover) input:checked ~ label svg{
+    fill: transparent;
 }
 
 svg{
-    fill: transparent;
+    position: absolute;
+    right: 5px;
+    top: 0;
+    transform: translateY(50%);
     width: 20px;
     height: 20px;
     transition-property: (transform, fill);
@@ -31,17 +51,20 @@ svg{
 }
 
 label{
+    display: block;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    position: relative;
+    border-top: 2px solid grey;
 }
 
-label:hover svg{
-    transform: rotate(45deg);
+label:hover svg,
+input:checked ~ label svg{
+    transform: rotate(45deg) translateY(50%);
+    right: -2px;
     fill: blue;
 }
 
-label:hover ~ img{
+.item-wrap:hover label .image {
     height: 320px;
 }
 
@@ -49,7 +72,7 @@ input{
     display: none;
 }
 
-input:not(:checked) ~ .image{
+input:not(:checked) ~ label .image{
     height: 0px;
     background-color: green;
 }
@@ -57,3 +80,4 @@ input:not(:checked) ~ .image{
 .item-wrap:not(:first-child){
     margin-top: 10px;
 }
+

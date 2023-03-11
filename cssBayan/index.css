@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 1200px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: auto;
+}
+
+.image{
+    display: block;
+    width: 320px;
+    height: 320px;
+    margin: auto;
+    outline: 1px solid tomato;
+    transition-property: (width);
+    transition-duration: 250ms;
+    transition-delay: 0;
+
+}
+
+svg{
+    fill: transparent;
+    width: 20px;
+    height: 20px;
+    transition-property: (transform, fill);
+    transition-duration: 500ms;
+    transition-delay: 0;
+}
+
+label{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+label:hover svg{
+    transform: rotate(45deg);
+    fill: blue;
+}
+
+label:hover ~ img{
+    height: 320px;
+}
+
+input{
+    display: none;
+}
+
+input:not(:checked) ~ .image{
+    height: 0px;
+    background-color: green;
+}
+
+.item-wrap:not(:first-child){
+    margin-top: 10px;
+}

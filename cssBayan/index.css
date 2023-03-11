@@ -9,6 +9,11 @@
     margin: auto;
 }
 
+h1{
+    font-size: 42px;
+    font-weight: 900;
+}
+
 .image{
     display: block;
     width: auto;
@@ -19,6 +24,7 @@
     transition-duration: 250ms;
     transition-delay: 0;
 }
+
 fieldset{
     border: none;
     margin-inline-start: 0;
@@ -32,6 +38,8 @@ fieldset{
 form:hover svg{
     fill: gray;
 }
+
+
 
 form:not(:hover) svg,
 form:not(:hover) input:checked ~ label svg{
@@ -54,7 +62,13 @@ label{
     display: block;
     width: 100%;
     position: relative;
-    border-top: 2px solid grey;
+    font-size: 26px;
+    font-weight: bold;
+    color: blue;
+}
+
+form:hover label {
+    color: black;
 }
 
 label:hover svg,
@@ -72,6 +86,10 @@ input{
     display: none;
 }
 
+input:checked ~ label{
+    color: black;
+}
+
 input:not(:checked) ~ label .image{
     height: 0px;
     background-color: green;
@@ -79,5 +97,12 @@ input:not(:checked) ~ label .image{
 
 .item-wrap:not(:first-child){
     margin-top: 10px;
+}
+
+.item-wrap{
+    border-top: 2px solid grey;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
